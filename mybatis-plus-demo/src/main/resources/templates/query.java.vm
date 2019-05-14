@@ -1,0 +1,12 @@
+package cn.itsource.aigou.query;
+
+
+/**
+ * @classname ${name}
+ * @description TODO
+ * @author zb
+ * @date ${date}
+ * @version 1.0
+ */
+public class ${table.entityName}Query extends BaseQuery{
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.itsource.mybatisplusdemo.mapper.EmployeeMapper">
+
+    <select id="selectByQuery" resultType="Employee">
+        SELECT * FROM t_employee
+        <where>
+            <if test="query.username!=null and query.username!=''">
+                AND username LIKE concat('%',#{query.username},'%')
+            </if>
+            <if test="query.phone!=null and query.phone!=''">
+                AND phone LIKE concat('%',#{query.phone},'%')
+            </if>
+            <if test="query.status!=null">
+                AND status = #{query.status}
+            </if>
+        </where>
+    </select>
+
+</mapper>
